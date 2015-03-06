@@ -1,0 +1,74 @@
+===============================
+Solution of Jobs Puzzle
+
+Person: Pete
+Jobs: actor and clerk
+---------
+Person: Roberta
+Jobs: teacher and guard
+---------
+Person: Steve
+Jobs: police officer and nurse
+---------
+Person: Thelma
+Jobs: boxer and chef
+---------
+
+Number of states searched:
+No MRV = 66
+===============================
+Solution of Jobs Puzzle
+
+Person: Pete
+Jobs: actor and clerk
+---------
+Person: Roberta
+Jobs: teacher and guard
+---------
+Person: Steve
+Jobs: police officer and nurse
+---------
+Person: Thelma
+Jobs: boxer and chef
+---------
+
+Number of states searched:
+MRV = 46
+===============================
+Solution of Zebra Puzzle
+
+House: 1
+Snack = Kit Kat | Nationality = Norwegian | Pet = fox | Drink = water | Color = yellow | 
+House: 2
+Snack = Hershey | Nationality = Ukranian | Color = blue | Pet = horse | Drink = tea | 
+House: 3
+Nationality = Englishman | Snack = Smarties | Drink = milk | Color = red | Pet = snails | 
+House: 4
+Snack = Snicker | Nationality = Spaniard | Pet = dog | Color = ivory | Drink = oj | 
+House: 5
+Nationality = Japanese | Snack = Milky Way | Drink = coffee | Color = green | Pet = zebra | 
+
+Where does the zebra live? In the green house
+Which house do they drink water? In the yellow house
+
+Number of states searched:
+No MRV = 1065
+===============================
+Solution of Zebra Puzzle
+
+House: 1
+Snack = Kit Kat | Nationality = Norwegian | Pet = fox | Drink = water | Color = yellow | 
+House: 2
+Snack = Hershey | Nationality = Ukranian | Color = blue | Pet = horse | Drink = tea | 
+House: 3
+Nationality = Englishman | Snack = Smarties | Drink = milk | Color = red | Pet = snails | 
+House: 4
+Snack = Snicker | Nationality = Spaniard | Pet = dog | Color = ivory | Drink = oj | 
+House: 5
+Nationality = Japanese | Snack = Milky Way | Drink = coffee | Color = green | Pet = zebra | 
+
+Where does the zebra live? In the green house
+Which house do they drink water? In the yellow house
+
+Number of states searched:
+MRV = 225
