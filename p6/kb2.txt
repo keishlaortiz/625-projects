@@ -1,0 +1,5 @@
+#example
+-P -Q R
+P
+Q
+-R

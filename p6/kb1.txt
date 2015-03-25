@@ -1,0 +1,9 @@
+#example
+-P R -Q S
+-A -R
+
+# facts
+A
+P
+Q
+-S
