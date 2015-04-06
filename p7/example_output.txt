@@ -1,0 +1,82 @@
+props:
+a b c d e f g h i j k l m n o 
+initial clauses:
+0: (-a v -f v g)
+1: (-a v -b v -h)
+2: (a v c)
+3: (-i v -l v a)
+4: (-j v -k v a)
+5: (b v d)
+6: (-n v b v g)
+7: (-f v b v k v n)
+8: (-c v k)
+9: (-c v -i v -k v l)
+10: (-m v c v h v n)
+11: (c v l)
+12: (-k v d v l)
+13: (-g v d v l)
+14: (-g v n v o)
+15: (-j v -o v h v n)
+16: (-i v j)
+17: (-d v -l v -m)
+18: (-e v -n v m)
+19: (-f v h v i)
+-----------
+model= {}
+pure_symbol on e=False
+model= {'e': False}
+pure_symbol on f=False
+model= {'e': False, 'f': False}
+pure_symbol on i=False
+model= {'i': False, 'e': False, 'f': False}
+pure_symbol on j=False
+model= {'i': False, 'j': False, 'e': False, 'f': False}
+pure_symbol on m=False
+model= {'i': False, 'm': False, 'j': False, 'e': False, 'f': False}
+pure_symbol on d=True
+model= {'e': False, 'd': True, 'f': False, 'i': False, 'j': False, 'm': False}
+pure_symbol on h=False
+model= {'e': False, 'd': True, 'f': False, 'i': False, 'h': False, 'j': False, 'm': False}
+pure_symbol on a=True
+model= {'a': True, 'e': False, 'd': True, 'f': False, 'i': False, 'h': False, 'j': False, 'm': False}
+pure_symbol on b=True
+model= {'a': True, 'b': True, 'e': False, 'd': True, 'f': False, 'i': False, 'h': False, 'j': False, 'm': False}
+pure_symbol on g=False
+model= {'a': True, 'b': True, 'e': False, 'd': True, 'g': False, 'f': False, 'i': False, 'h': False, 'j': False, 'm': False}
+pure_symbol on k=True
+model= {'a': True, 'b': True, 'e': False, 'd': True, 'g': False, 'f': False, 'i': False, 'h': False, 'k': True, 'j': False, 'm': False}
+pure_symbol on c=True
+model= {'a': True, 'c': True, 'b': True, 'e': False, 'd': True, 'g': False, 'f': False, 'i': False, 'h': False, 'k': True, 'j': False, 'm': False}
+trying l=T
+model= {'a': True, 'c': True, 'b': True, 'e': False, 'd': True, 'g': False, 'f': False, 'i': False, 'h': False, 'k': True, 'j': False, 'm': False, 'l': True}
+trying n=T
+model= {'a': True, 'c': True, 'b': True, 'e': False, 'd': True, 'g': False, 'f': False, 'i': False, 'h': False, 'k': True, 'j': False, 'm': False, 'l': True, 'n': True}
+trying o=T
+model= {'a': True, 'c': True, 'b': True, 'e': False, 'd': True, 'g': False, 'f': False, 'i': False, 'h': False, 'k': True, 'j': False, 'm': False, 'l': True, 'o': True, 'n': True}
+nodes searched=16
+solution:
+a=True
+b=True
+c=True
+d=True
+e=False
+f=False
+g=False
+h=False
+i=False
+j=False
+k=True
+l=True
+m=False
+n=True
+o=True
+-----------
+true props:
+a
+b
+c
+d
+k
+l
+n
+o

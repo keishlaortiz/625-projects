@@ -1,0 +1,749 @@
+# Clauses to solve the Farmer-Fox-Chicken-Grain problem
+# init
+T0_FaL
+T0_FxL
+T0_ChL
+T0_GrL
+
+# goal
+T7_FaR
+T7_FxR
+T7_ChR
+T7_GrR
+
+# the location of objects are time-dependent
+T0_FaL T0_FaR
+-T0_FaL -T0_FaR
+T1_FaL T1_FaR
+-T1_FaL -T1_FaR
+T2_FaL T2_FaR
+-T2_FaL -T2_FaR
+T3_FaL T3_FaR
+-T3_FaL -T3_FaR
+T4_FaL T4_FaR
+-T4_FaL -T4_FaR
+T5_FaL T5_FaR
+-T5_FaL -T5_FaR
+T6_FaL T6_FaR
+-T6_FaL -T6_FaR
+T7_FaL T7_FaR
+-T7_FaL -T7_FaR
+T0_FxL T0_FxR
+-T0_FxL -T0_FxR
+T1_FxL T1_FxR
+-T1_FxL -T1_FxR
+T2_FxL T2_FxR
+-T2_FxL -T2_FxR
+T3_FxL T3_FxR
+-T3_FxL -T3_FxR
+T4_FxL T4_FxR
+-T4_FxL -T4_FxR
+T5_FxL T5_FxR
+-T5_FxL -T5_FxR
+T6_FxL T6_FxR
+-T6_FxL -T6_FxR
+T7_FxL T7_FxR
+-T7_FxL -T7_FxR
+T0_ChL T0_ChR
+-T0_ChL -T0_ChR
+T1_ChL T1_ChR
+-T1_ChL -T1_ChR
+T2_ChL T2_ChR
+-T2_ChL -T2_ChR
+T3_ChL T3_ChR
+-T3_ChL -T3_ChR
+T4_ChL T4_ChR
+-T4_ChL -T4_ChR
+T5_ChL T5_ChR
+-T5_ChL -T5_ChR
+T6_ChL T6_ChR
+-T6_ChL -T6_ChR
+T7_ChL T7_ChR
+-T7_ChL -T7_ChR
+T0_GrL T0_GrR
+-T0_GrL -T0_GrR
+T1_GrL T1_GrR
+-T1_GrL -T1_GrR
+T2_GrL T2_GrR
+-T2_GrL -T2_GrR
+T3_GrL T3_GrR
+-T3_GrL -T3_GrR
+T4_GrL T4_GrR
+-T4_GrL -T4_GrR
+T5_GrL T5_GrR
+-T5_GrL -T5_GrR
+T6_GrL T6_GrR
+-T6_GrL -T6_GrR
+T7_GrL T7_GrR
+-T7_GrL -T7_GrR
+
+ #eating constraints
+-T0_ChL -T0_GrL -T0_FaR
+-T0_ChR -T0_GrR -T0_FaL
+-T0_ChL -T0_FxL -T0_FaR
+-T0_ChR -T0_FxR -T0_FaL
+-T1_ChL -T1_GrL -T1_FaR
+-T1_ChR -T1_GrR -T1_FaL
+-T1_ChL -T1_FxL -T1_FaR
+-T1_ChR -T1_FxR -T1_FaL
+-T2_ChL -T2_GrL -T2_FaR
+-T2_ChR -T2_GrR -T2_FaL
+-T2_ChL -T2_FxL -T2_FaR
+-T2_ChR -T2_FxR -T2_FaL
+-T3_ChL -T3_GrL -T3_FaR
+-T3_ChR -T3_GrR -T3_FaL
+-T3_ChL -T3_FxL -T3_FaR
+-T3_ChR -T3_FxR -T3_FaL
+-T4_ChL -T4_GrL -T4_FaR
+-T4_ChR -T4_GrR -T4_FaL
+-T4_ChL -T4_FxL -T4_FaR
+-T4_ChR -T4_FxR -T4_FaL
+-T5_ChL -T5_GrL -T5_FaR
+-T5_ChR -T5_GrR -T5_FaL
+-T5_ChL -T5_FxL -T5_FaR
+-T5_ChR -T5_FxR -T5_FaL
+-T6_ChL -T6_GrL -T6_FaR
+-T6_ChR -T6_GrR -T6_FaL
+-T6_ChL -T6_FxL -T6_FaR
+-T6_ChR -T6_FxR -T6_FaL
+-T7_ChL -T7_GrL -T7_FaR
+-T7_ChR -T7_GrR -T7_FaL
+-T7_ChL -T7_FxL -T7_FaR
+-T7_ChR -T7_FxR -T7_FaL
+
+# only one action should be executed at each step
+-T0_mv_Fa_LR -T0_mv_Fa_RL
+-T0_mv_Fa_LR -T0_mv_Fx_LR
+-T0_mv_Fa_LR -T0_mv_Fx_RL
+-T0_mv_Fa_RL -T0_mv_Fx_LR
+-T0_mv_Fa_RL -T0_mv_Fx_RL
+-T0_mv_Fa_LR -T0_mv_Ch_LR
+-T0_mv_Fa_LR -T0_mv_Ch_RL
+-T0_mv_Fa_RL -T0_mv_Ch_LR
+-T0_mv_Fa_RL -T0_mv_Ch_RL
+-T0_mv_Fa_LR -T0_mv_Gr_LR
+-T0_mv_Fa_LR -T0_mv_Gr_RL
+-T0_mv_Fa_RL -T0_mv_Gr_LR
+-T0_mv_Fa_RL -T0_mv_Gr_RL
+-T1_mv_Fa_LR -T1_mv_Fa_RL
+-T1_mv_Fa_LR -T1_mv_Fx_LR
+-T1_mv_Fa_LR -T1_mv_Fx_RL
+-T1_mv_Fa_RL -T1_mv_Fx_LR
+-T1_mv_Fa_RL -T1_mv_Fx_RL
+-T1_mv_Fa_LR -T1_mv_Ch_LR
+-T1_mv_Fa_LR -T1_mv_Ch_RL
+-T1_mv_Fa_RL -T1_mv_Ch_LR
+-T1_mv_Fa_RL -T1_mv_Ch_RL
+-T1_mv_Fa_LR -T1_mv_Gr_LR
+-T1_mv_Fa_LR -T1_mv_Gr_RL
+-T1_mv_Fa_RL -T1_mv_Gr_LR
+-T1_mv_Fa_RL -T1_mv_Gr_RL
+-T2_mv_Fa_LR -T2_mv_Fa_RL
+-T2_mv_Fa_LR -T2_mv_Fx_LR
+-T2_mv_Fa_LR -T2_mv_Fx_RL
+-T2_mv_Fa_RL -T2_mv_Fx_LR
+-T2_mv_Fa_RL -T2_mv_Fx_RL
+-T2_mv_Fa_LR -T2_mv_Ch_LR
+-T2_mv_Fa_LR -T2_mv_Ch_RL
+-T2_mv_Fa_RL -T2_mv_Ch_LR
+-T2_mv_Fa_RL -T2_mv_Ch_RL
+-T2_mv_Fa_LR -T2_mv_Gr_LR
+-T2_mv_Fa_LR -T2_mv_Gr_RL
+-T2_mv_Fa_RL -T2_mv_Gr_LR
+-T2_mv_Fa_RL -T2_mv_Gr_RL
+-T3_mv_Fa_LR -T3_mv_Fa_RL
+-T3_mv_Fa_LR -T3_mv_Fx_LR
+-T3_mv_Fa_LR -T3_mv_Fx_RL
+-T3_mv_Fa_RL -T3_mv_Fx_LR
+-T3_mv_Fa_RL -T3_mv_Fx_RL
+-T3_mv_Fa_LR -T3_mv_Ch_LR
+-T3_mv_Fa_LR -T3_mv_Ch_RL
+-T3_mv_Fa_RL -T3_mv_Ch_LR
+-T3_mv_Fa_RL -T3_mv_Ch_RL
+-T3_mv_Fa_LR -T3_mv_Gr_LR
+-T3_mv_Fa_LR -T3_mv_Gr_RL
+-T3_mv_Fa_RL -T3_mv_Gr_LR
+-T3_mv_Fa_RL -T3_mv_Gr_RL
+-T4_mv_Fa_LR -T4_mv_Fa_RL
+-T4_mv_Fa_LR -T4_mv_Fx_LR
+-T4_mv_Fa_LR -T4_mv_Fx_RL
+-T4_mv_Fa_RL -T4_mv_Fx_LR
+-T4_mv_Fa_RL -T4_mv_Fx_RL
+-T4_mv_Fa_LR -T4_mv_Ch_LR
+-T4_mv_Fa_LR -T4_mv_Ch_RL
+-T4_mv_Fa_RL -T4_mv_Ch_LR
+-T4_mv_Fa_RL -T4_mv_Ch_RL
+-T4_mv_Fa_LR -T4_mv_Gr_LR
+-T4_mv_Fa_LR -T4_mv_Gr_RL
+-T4_mv_Fa_RL -T4_mv_Gr_LR
+-T4_mv_Fa_RL -T4_mv_Gr_RL
+-T5_mv_Fa_LR -T5_mv_Fa_RL
+-T5_mv_Fa_LR -T5_mv_Fx_LR
+-T5_mv_Fa_LR -T5_mv_Fx_RL
+-T5_mv_Fa_RL -T5_mv_Fx_LR
+-T5_mv_Fa_RL -T5_mv_Fx_RL
+-T5_mv_Fa_LR -T5_mv_Ch_LR
+-T5_mv_Fa_LR -T5_mv_Ch_RL
+-T5_mv_Fa_RL -T5_mv_Ch_LR
+-T5_mv_Fa_RL -T5_mv_Ch_RL
+-T5_mv_Fa_LR -T5_mv_Gr_LR
+-T5_mv_Fa_LR -T5_mv_Gr_RL
+-T5_mv_Fa_RL -T5_mv_Gr_LR
+-T5_mv_Fa_RL -T5_mv_Gr_RL
+-T6_mv_Fa_LR -T6_mv_Fa_RL
+-T6_mv_Fa_LR -T6_mv_Fx_LR
+-T6_mv_Fa_LR -T6_mv_Fx_RL
+-T6_mv_Fa_RL -T6_mv_Fx_LR
+-T6_mv_Fa_RL -T6_mv_Fx_RL
+-T6_mv_Fa_LR -T6_mv_Ch_LR
+-T6_mv_Fa_LR -T6_mv_Ch_RL
+-T6_mv_Fa_RL -T6_mv_Ch_LR
+-T6_mv_Fa_RL -T6_mv_Ch_RL
+-T6_mv_Fa_LR -T6_mv_Gr_LR
+-T6_mv_Fa_LR -T6_mv_Gr_RL
+-T6_mv_Fa_RL -T6_mv_Gr_LR
+-T6_mv_Fa_RL -T6_mv_Gr_RL
+-T0_mv_Fx_LR -T0_mv_Fa_LR
+-T0_mv_Fx_LR -T0_mv_Fa_RL
+-T0_mv_Fx_RL -T0_mv_Fa_LR
+-T0_mv_Fx_RL -T0_mv_Fa_RL
+-T0_mv_Fx_LR -T0_mv_Fx_RL
+-T0_mv_Fx_LR -T0_mv_Ch_LR
+-T0_mv_Fx_LR -T0_mv_Ch_RL
+-T0_mv_Fx_RL -T0_mv_Ch_LR
+-T0_mv_Fx_RL -T0_mv_Ch_RL
+-T0_mv_Fx_LR -T0_mv_Gr_LR
+-T0_mv_Fx_LR -T0_mv_Gr_RL
+-T0_mv_Fx_RL -T0_mv_Gr_LR
+-T0_mv_Fx_RL -T0_mv_Gr_RL
+-T1_mv_Fx_LR -T1_mv_Fa_LR
+-T1_mv_Fx_LR -T1_mv_Fa_RL
+-T1_mv_Fx_RL -T1_mv_Fa_LR
+-T1_mv_Fx_RL -T1_mv_Fa_RL
+-T1_mv_Fx_LR -T1_mv_Fx_RL
+-T1_mv_Fx_LR -T1_mv_Ch_LR
+-T1_mv_Fx_LR -T1_mv_Ch_RL
+-T1_mv_Fx_RL -T1_mv_Ch_LR
+-T1_mv_Fx_RL -T1_mv_Ch_RL
+-T1_mv_Fx_LR -T1_mv_Gr_LR
+-T1_mv_Fx_LR -T1_mv_Gr_RL
+-T1_mv_Fx_RL -T1_mv_Gr_LR
+-T1_mv_Fx_RL -T1_mv_Gr_RL
+-T2_mv_Fx_LR -T2_mv_Fa_LR
+-T2_mv_Fx_LR -T2_mv_Fa_RL
+-T2_mv_Fx_RL -T2_mv_Fa_LR
+-T2_mv_Fx_RL -T2_mv_Fa_RL
+-T2_mv_Fx_LR -T2_mv_Fx_RL
+-T2_mv_Fx_LR -T2_mv_Ch_LR
+-T2_mv_Fx_LR -T2_mv_Ch_RL
+-T2_mv_Fx_RL -T2_mv_Ch_LR
+-T2_mv_Fx_RL -T2_mv_Ch_RL
+-T2_mv_Fx_LR -T2_mv_Gr_LR
+-T2_mv_Fx_LR -T2_mv_Gr_RL
+-T2_mv_Fx_RL -T2_mv_Gr_LR
+-T2_mv_Fx_RL -T2_mv_Gr_RL
+-T3_mv_Fx_LR -T3_mv_Fa_LR
+-T3_mv_Fx_LR -T3_mv_Fa_RL
+-T3_mv_Fx_RL -T3_mv_Fa_LR
+-T3_mv_Fx_RL -T3_mv_Fa_RL
+-T3_mv_Fx_LR -T3_mv_Fx_RL
+-T3_mv_Fx_LR -T3_mv_Ch_LR
+-T3_mv_Fx_LR -T3_mv_Ch_RL
+-T3_mv_Fx_RL -T3_mv_Ch_LR
+-T3_mv_Fx_RL -T3_mv_Ch_RL
+-T3_mv_Fx_LR -T3_mv_Gr_LR
+-T3_mv_Fx_LR -T3_mv_Gr_RL
+-T3_mv_Fx_RL -T3_mv_Gr_LR
+-T3_mv_Fx_RL -T3_mv_Gr_RL
+-T4_mv_Fx_LR -T4_mv_Fa_LR
+-T4_mv_Fx_LR -T4_mv_Fa_RL
+-T4_mv_Fx_RL -T4_mv_Fa_LR
+-T4_mv_Fx_RL -T4_mv_Fa_RL
+-T4_mv_Fx_LR -T4_mv_Fx_RL
+-T4_mv_Fx_LR -T4_mv_Ch_LR
+-T4_mv_Fx_LR -T4_mv_Ch_RL
+-T4_mv_Fx_RL -T4_mv_Ch_LR
+-T4_mv_Fx_RL -T4_mv_Ch_RL
+-T4_mv_Fx_LR -T4_mv_Gr_LR
+-T4_mv_Fx_LR -T4_mv_Gr_RL
+-T4_mv_Fx_RL -T4_mv_Gr_LR
+-T4_mv_Fx_RL -T4_mv_Gr_RL
+-T5_mv_Fx_LR -T5_mv_Fa_LR
+-T5_mv_Fx_LR -T5_mv_Fa_RL
+-T5_mv_Fx_RL -T5_mv_Fa_LR
+-T5_mv_Fx_RL -T5_mv_Fa_RL
+-T5_mv_Fx_LR -T5_mv_Fx_RL
+-T5_mv_Fx_LR -T5_mv_Ch_LR
+-T5_mv_Fx_LR -T5_mv_Ch_RL
+-T5_mv_Fx_RL -T5_mv_Ch_LR
+-T5_mv_Fx_RL -T5_mv_Ch_RL
+-T5_mv_Fx_LR -T5_mv_Gr_LR
+-T5_mv_Fx_LR -T5_mv_Gr_RL
+-T5_mv_Fx_RL -T5_mv_Gr_LR
+-T5_mv_Fx_RL -T5_mv_Gr_RL
+-T6_mv_Fx_LR -T6_mv_Fa_LR
+-T6_mv_Fx_LR -T6_mv_Fa_RL
+-T6_mv_Fx_RL -T6_mv_Fa_LR
+-T6_mv_Fx_RL -T6_mv_Fa_RL
+-T6_mv_Fx_LR -T6_mv_Fx_RL
+-T6_mv_Fx_LR -T6_mv_Ch_LR
+-T6_mv_Fx_LR -T6_mv_Ch_RL
+-T6_mv_Fx_RL -T6_mv_Ch_LR
+-T6_mv_Fx_RL -T6_mv_Ch_RL
+-T6_mv_Fx_LR -T6_mv_Gr_LR
+-T6_mv_Fx_LR -T6_mv_Gr_RL
+-T6_mv_Fx_RL -T6_mv_Gr_LR
+-T6_mv_Fx_RL -T6_mv_Gr_RL
+-T0_mv_Ch_LR -T0_mv_Fa_LR
+-T0_mv_Ch_LR -T0_mv_Fa_RL
+-T0_mv_Ch_RL -T0_mv_Fa_LR
+-T0_mv_Ch_RL -T0_mv_Fa_RL
+-T0_mv_Ch_LR -T0_mv_Fx_LR
+-T0_mv_Ch_LR -T0_mv_Fx_RL
+-T0_mv_Ch_RL -T0_mv_Fx_LR
+-T0_mv_Ch_RL -T0_mv_Fx_RL
+-T0_mv_Ch_LR -T0_mv_Ch_RL
+-T0_mv_Ch_LR -T0_mv_Gr_LR
+-T0_mv_Ch_LR -T0_mv_Gr_RL
+-T0_mv_Ch_RL -T0_mv_Gr_LR
+-T0_mv_Ch_RL -T0_mv_Gr_RL
+-T1_mv_Ch_LR -T1_mv_Fa_LR
+-T1_mv_Ch_LR -T1_mv_Fa_RL
+-T1_mv_Ch_RL -T1_mv_Fa_LR
+-T1_mv_Ch_RL -T1_mv_Fa_RL
+-T1_mv_Ch_LR -T1_mv_Fx_LR
+-T1_mv_Ch_LR -T1_mv_Fx_RL
+-T1_mv_Ch_RL -T1_mv_Fx_LR
+-T1_mv_Ch_RL -T1_mv_Fx_RL
+-T1_mv_Ch_LR -T1_mv_Ch_RL
+-T1_mv_Ch_LR -T1_mv_Gr_LR
+-T1_mv_Ch_LR -T1_mv_Gr_RL
+-T1_mv_Ch_RL -T1_mv_Gr_LR
+-T1_mv_Ch_RL -T1_mv_Gr_RL
+-T2_mv_Ch_LR -T2_mv_Fa_LR
+-T2_mv_Ch_LR -T2_mv_Fa_RL
+-T2_mv_Ch_RL -T2_mv_Fa_LR
+-T2_mv_Ch_RL -T2_mv_Fa_RL
+-T2_mv_Ch_LR -T2_mv_Fx_LR
+-T2_mv_Ch_LR -T2_mv_Fx_RL
+-T2_mv_Ch_RL -T2_mv_Fx_LR
+-T2_mv_Ch_RL -T2_mv_Fx_RL
+-T2_mv_Ch_LR -T2_mv_Ch_RL
+-T2_mv_Ch_LR -T2_mv_Gr_LR
+-T2_mv_Ch_LR -T2_mv_Gr_RL
+-T2_mv_Ch_RL -T2_mv_Gr_LR
+-T2_mv_Ch_RL -T2_mv_Gr_RL
+-T3_mv_Ch_LR -T3_mv_Fa_LR
+-T3_mv_Ch_LR -T3_mv_Fa_RL
+-T3_mv_Ch_RL -T3_mv_Fa_LR
+-T3_mv_Ch_RL -T3_mv_Fa_RL
+-T3_mv_Ch_LR -T3_mv_Fx_LR
+-T3_mv_Ch_LR -T3_mv_Fx_RL
+-T3_mv_Ch_RL -T3_mv_Fx_LR
+-T3_mv_Ch_RL -T3_mv_Fx_RL
+-T3_mv_Ch_LR -T3_mv_Ch_RL
+-T3_mv_Ch_LR -T3_mv_Gr_LR
+-T3_mv_Ch_LR -T3_mv_Gr_RL
+-T3_mv_Ch_RL -T3_mv_Gr_LR
+-T3_mv_Ch_RL -T3_mv_Gr_RL
+-T4_mv_Ch_LR -T4_mv_Fa_LR
+-T4_mv_Ch_LR -T4_mv_Fa_RL
+-T4_mv_Ch_RL -T4_mv_Fa_LR
+-T4_mv_Ch_RL -T4_mv_Fa_RL
+-T4_mv_Ch_LR -T4_mv_Fx_LR
+-T4_mv_Ch_LR -T4_mv_Fx_RL
+-T4_mv_Ch_RL -T4_mv_Fx_LR
+-T4_mv_Ch_RL -T4_mv_Fx_RL
+-T4_mv_Ch_LR -T4_mv_Ch_RL
+-T4_mv_Ch_LR -T4_mv_Gr_LR
+-T4_mv_Ch_LR -T4_mv_Gr_RL
+-T4_mv_Ch_RL -T4_mv_Gr_LR
+-T4_mv_Ch_RL -T4_mv_Gr_RL
+-T5_mv_Ch_LR -T5_mv_Fa_LR
+-T5_mv_Ch_LR -T5_mv_Fa_RL
+-T5_mv_Ch_RL -T5_mv_Fa_LR
+-T5_mv_Ch_RL -T5_mv_Fa_RL
+-T5_mv_Ch_LR -T5_mv_Fx_LR
+-T5_mv_Ch_LR -T5_mv_Fx_RL
+-T5_mv_Ch_RL -T5_mv_Fx_LR
+-T5_mv_Ch_RL -T5_mv_Fx_RL
+-T5_mv_Ch_LR -T5_mv_Ch_RL
+-T5_mv_Ch_LR -T5_mv_Gr_LR
+-T5_mv_Ch_LR -T5_mv_Gr_RL
+-T5_mv_Ch_RL -T5_mv_Gr_LR
+-T5_mv_Ch_RL -T5_mv_Gr_RL
+-T6_mv_Ch_LR -T6_mv_Fa_LR
+-T6_mv_Ch_LR -T6_mv_Fa_RL
+-T6_mv_Ch_RL -T6_mv_Fa_LR
+-T6_mv_Ch_RL -T6_mv_Fa_RL
+-T6_mv_Ch_LR -T6_mv_Fx_LR
+-T6_mv_Ch_LR -T6_mv_Fx_RL
+-T6_mv_Ch_RL -T6_mv_Fx_LR
+-T6_mv_Ch_RL -T6_mv_Fx_RL
+-T6_mv_Ch_LR -T6_mv_Ch_RL
+-T6_mv_Ch_LR -T6_mv_Gr_LR
+-T6_mv_Ch_LR -T6_mv_Gr_RL
+-T6_mv_Ch_RL -T6_mv_Gr_LR
+-T6_mv_Ch_RL -T6_mv_Gr_RL
+-T0_mv_Gr_LR -T0_mv_Fa_LR
+-T0_mv_Gr_LR -T0_mv_Fa_RL
+-T0_mv_Gr_RL -T0_mv_Fa_LR
+-T0_mv_Gr_RL -T0_mv_Fa_RL
+-T0_mv_Gr_LR -T0_mv_Fx_LR
+-T0_mv_Gr_LR -T0_mv_Fx_RL
+-T0_mv_Gr_RL -T0_mv_Fx_LR
+-T0_mv_Gr_RL -T0_mv_Fx_RL
+-T0_mv_Gr_LR -T0_mv_Ch_LR
+-T0_mv_Gr_LR -T0_mv_Ch_RL
+-T0_mv_Gr_RL -T0_mv_Ch_LR
+-T0_mv_Gr_RL -T0_mv_Ch_RL
+-T0_mv_Gr_LR -T0_mv_Gr_RL
+-T1_mv_Gr_LR -T1_mv_Fa_LR
+-T1_mv_Gr_LR -T1_mv_Fa_RL
+-T1_mv_Gr_RL -T1_mv_Fa_LR
+-T1_mv_Gr_RL -T1_mv_Fa_RL
+-T1_mv_Gr_LR -T1_mv_Fx_LR
+-T1_mv_Gr_LR -T1_mv_Fx_RL
+-T1_mv_Gr_RL -T1_mv_Fx_LR
+-T1_mv_Gr_RL -T1_mv_Fx_RL
+-T1_mv_Gr_LR -T1_mv_Ch_LR
+-T1_mv_Gr_LR -T1_mv_Ch_RL
+-T1_mv_Gr_RL -T1_mv_Ch_LR
+-T1_mv_Gr_RL -T1_mv_Ch_RL
+-T1_mv_Gr_LR -T1_mv_Gr_RL
+-T2_mv_Gr_LR -T2_mv_Fa_LR
+-T2_mv_Gr_LR -T2_mv_Fa_RL
+-T2_mv_Gr_RL -T2_mv_Fa_LR
+-T2_mv_Gr_RL -T2_mv_Fa_RL
+-T2_mv_Gr_LR -T2_mv_Fx_LR
+-T2_mv_Gr_LR -T2_mv_Fx_RL
+-T2_mv_Gr_RL -T2_mv_Fx_LR
+-T2_mv_Gr_RL -T2_mv_Fx_RL
+-T2_mv_Gr_LR -T2_mv_Ch_LR
+-T2_mv_Gr_LR -T2_mv_Ch_RL
+-T2_mv_Gr_RL -T2_mv_Ch_LR
+-T2_mv_Gr_RL -T2_mv_Ch_RL
+-T2_mv_Gr_LR -T2_mv_Gr_RL
+-T3_mv_Gr_LR -T3_mv_Fa_LR
+-T3_mv_Gr_LR -T3_mv_Fa_RL
+-T3_mv_Gr_RL -T3_mv_Fa_LR
+-T3_mv_Gr_RL -T3_mv_Fa_RL
+-T3_mv_Gr_LR -T3_mv_Fx_LR
+-T3_mv_Gr_LR -T3_mv_Fx_RL
+-T3_mv_Gr_RL -T3_mv_Fx_LR
+-T3_mv_Gr_RL -T3_mv_Fx_RL
+-T3_mv_Gr_LR -T3_mv_Ch_LR
+-T3_mv_Gr_LR -T3_mv_Ch_RL
+-T3_mv_Gr_RL -T3_mv_Ch_LR
+-T3_mv_Gr_RL -T3_mv_Ch_RL
+-T3_mv_Gr_LR -T3_mv_Gr_RL
+-T4_mv_Gr_LR -T4_mv_Fa_LR
+-T4_mv_Gr_LR -T4_mv_Fa_RL
+-T4_mv_Gr_RL -T4_mv_Fa_LR
+-T4_mv_Gr_RL -T4_mv_Fa_RL
+-T4_mv_Gr_LR -T4_mv_Fx_LR
+-T4_mv_Gr_LR -T4_mv_Fx_RL
+-T4_mv_Gr_RL -T4_mv_Fx_LR
+-T4_mv_Gr_RL -T4_mv_Fx_RL
+-T4_mv_Gr_LR -T4_mv_Ch_LR
+-T4_mv_Gr_LR -T4_mv_Ch_RL
+-T4_mv_Gr_RL -T4_mv_Ch_LR
+-T4_mv_Gr_RL -T4_mv_Ch_RL
+-T4_mv_Gr_LR -T4_mv_Gr_RL
+-T5_mv_Gr_LR -T5_mv_Fa_LR
+-T5_mv_Gr_LR -T5_mv_Fa_RL
+-T5_mv_Gr_RL -T5_mv_Fa_LR
+-T5_mv_Gr_RL -T5_mv_Fa_RL
+-T5_mv_Gr_LR -T5_mv_Fx_LR
+-T5_mv_Gr_LR -T5_mv_Fx_RL
+-T5_mv_Gr_RL -T5_mv_Fx_LR
+-T5_mv_Gr_RL -T5_mv_Fx_RL
+-T5_mv_Gr_LR -T5_mv_Ch_LR
+-T5_mv_Gr_LR -T5_mv_Ch_RL
+-T5_mv_Gr_RL -T5_mv_Ch_LR
+-T5_mv_Gr_RL -T5_mv_Ch_RL
+-T5_mv_Gr_LR -T5_mv_Gr_RL
+-T6_mv_Gr_LR -T6_mv_Fa_LR
+-T6_mv_Gr_LR -T6_mv_Fa_RL
+-T6_mv_Gr_RL -T6_mv_Fa_LR
+-T6_mv_Gr_RL -T6_mv_Fa_RL
+-T6_mv_Gr_LR -T6_mv_Fx_LR
+-T6_mv_Gr_LR -T6_mv_Fx_RL
+-T6_mv_Gr_RL -T6_mv_Fx_LR
+-T6_mv_Gr_RL -T6_mv_Fx_RL
+-T6_mv_Gr_LR -T6_mv_Ch_LR
+-T6_mv_Gr_LR -T6_mv_Ch_RL
+-T6_mv_Gr_RL -T6_mv_Ch_LR
+-T6_mv_Gr_RL -T6_mv_Ch_RL
+-T6_mv_Gr_LR -T6_mv_Gr_RL
+
+T0_mv_Fa_LR T0_mv_Fa_RL T0_mv_Fx_LR T0_mv_Fx_RL T0_mv_Ch_LR T0_mv_Ch_RL T0_mv_Gr_LR T0_mv_Gr_RL 
+T1_mv_Fa_LR T1_mv_Fa_RL T1_mv_Fx_LR T1_mv_Fx_RL T1_mv_Ch_LR T1_mv_Ch_RL T1_mv_Gr_LR T1_mv_Gr_RL 
+T2_mv_Fa_LR T2_mv_Fa_RL T2_mv_Fx_LR T2_mv_Fx_RL T2_mv_Ch_LR T2_mv_Ch_RL T2_mv_Gr_LR T2_mv_Gr_RL 
+T3_mv_Fa_LR T3_mv_Fa_RL T3_mv_Fx_LR T3_mv_Fx_RL T3_mv_Ch_LR T3_mv_Ch_RL T3_mv_Gr_LR T3_mv_Gr_RL 
+T4_mv_Fa_LR T4_mv_Fa_RL T4_mv_Fx_LR T4_mv_Fx_RL T4_mv_Ch_LR T4_mv_Ch_RL T4_mv_Gr_LR T4_mv_Gr_RL 
+T5_mv_Fa_LR T5_mv_Fa_RL T5_mv_Fx_LR T5_mv_Fx_RL T5_mv_Ch_LR T5_mv_Ch_RL T5_mv_Gr_LR T5_mv_Gr_RL 
+T6_mv_Fa_LR T6_mv_Fa_RL T6_mv_Fx_LR T6_mv_Fx_RL T6_mv_Ch_LR T6_mv_Ch_RL T6_mv_Gr_LR T6_mv_Gr_RL 
+
+ # Preconditions and effects of each action 
+-T0_mv_Fa_LR T0_FaL
+-T0_mv_Fa_LR T1_FaR
+-T0_mv_Fa_RL T0_FaR
+-T0_mv_Fa_RL T1_FaL
+-T1_mv_Fa_LR T1_FaL
+-T1_mv_Fa_LR T2_FaR
+-T1_mv_Fa_RL T1_FaR
+-T1_mv_Fa_RL T2_FaL
+-T2_mv_Fa_LR T2_FaL
+-T2_mv_Fa_LR T3_FaR
+-T2_mv_Fa_RL T2_FaR
+-T2_mv_Fa_RL T3_FaL
+-T3_mv_Fa_LR T3_FaL
+-T3_mv_Fa_LR T4_FaR
+-T3_mv_Fa_RL T3_FaR
+-T3_mv_Fa_RL T4_FaL
+-T4_mv_Fa_LR T4_FaL
+-T4_mv_Fa_LR T5_FaR
+-T4_mv_Fa_RL T4_FaR
+-T4_mv_Fa_RL T5_FaL
+-T5_mv_Fa_LR T5_FaL
+-T5_mv_Fa_LR T6_FaR
+-T5_mv_Fa_RL T5_FaR
+-T5_mv_Fa_RL T6_FaL
+-T6_mv_Fa_LR T6_FaL
+-T6_mv_Fa_LR T7_FaR
+-T6_mv_Fa_RL T6_FaR
+-T6_mv_Fa_RL T7_FaL
+-T0_mv_Fx_LR T0_FaL
+-T0_mv_Fx_LR T1_FaR
+-T0_mv_Fx_RL T0_FaR
+-T0_mv_Fx_RL T1_FaL
+T0_mv_Fx_LR -T0_FaL -T1_FaR -T0_FxL -T1_FxR
+T0_mv_Fx_RL -T0_FaR -T1_FaL -T0_FxR -T1_FxL
+-T0_mv_Fx_LR T0_FxL
+-T0_mv_Fx_LR T1_FxR
+-T0_mv_Fx_RL T0_FxR
+-T0_mv_Fx_RL T1_FxL
+-T1_mv_Fx_LR T1_FaL
+-T1_mv_Fx_LR T2_FaR
+-T1_mv_Fx_RL T1_FaR
+-T1_mv_Fx_RL T2_FaL
+T1_mv_Fx_LR -T1_FaL -T2_FaR -T1_FxL -T2_FxR
+T1_mv_Fx_RL -T1_FaR -T2_FaL -T1_FxR -T2_FxL
+-T1_mv_Fx_LR T1_FxL
+-T1_mv_Fx_LR T2_FxR
+-T1_mv_Fx_RL T1_FxR
+-T1_mv_Fx_RL T2_FxL
+-T2_mv_Fx_LR T2_FaL
+-T2_mv_Fx_LR T3_FaR
+-T2_mv_Fx_RL T2_FaR
+-T2_mv_Fx_RL T3_FaL
+T2_mv_Fx_LR -T2_FaL -T3_FaR -T2_FxL -T3_FxR
+T2_mv_Fx_RL -T2_FaR -T3_FaL -T2_FxR -T3_FxL
+-T2_mv_Fx_LR T2_FxL
+-T2_mv_Fx_LR T3_FxR
+-T2_mv_Fx_RL T2_FxR
+-T2_mv_Fx_RL T3_FxL
+-T3_mv_Fx_LR T3_FaL
+-T3_mv_Fx_LR T4_FaR
+-T3_mv_Fx_RL T3_FaR
+-T3_mv_Fx_RL T4_FaL
+T3_mv_Fx_LR -T3_FaL -T4_FaR -T3_FxL -T4_FxR
+T3_mv_Fx_RL -T3_FaR -T4_FaL -T3_FxR -T4_FxL
+-T3_mv_Fx_LR T3_FxL
+-T3_mv_Fx_LR T4_FxR
+-T3_mv_Fx_RL T3_FxR
+-T3_mv_Fx_RL T4_FxL
+-T4_mv_Fx_LR T4_FaL
+-T4_mv_Fx_LR T5_FaR
+-T4_mv_Fx_RL T4_FaR
+-T4_mv_Fx_RL T5_FaL
+T4_mv_Fx_LR -T4_FaL -T5_FaR -T4_FxL -T5_FxR
+T4_mv_Fx_RL -T4_FaR -T5_FaL -T4_FxR -T5_FxL
+-T4_mv_Fx_LR T4_FxL
+-T4_mv_Fx_LR T5_FxR
+-T4_mv_Fx_RL T4_FxR
+-T4_mv_Fx_RL T5_FxL
+-T5_mv_Fx_LR T5_FaL
+-T5_mv_Fx_LR T6_FaR
+-T5_mv_Fx_RL T5_FaR
+-T5_mv_Fx_RL T6_FaL
+T5_mv_Fx_LR -T5_FaL -T6_FaR -T5_FxL -T6_FxR
+T5_mv_Fx_RL -T5_FaR -T6_FaL -T5_FxR -T6_FxL
+-T5_mv_Fx_LR T5_FxL
+-T5_mv_Fx_LR T6_FxR
+-T5_mv_Fx_RL T5_FxR
+-T5_mv_Fx_RL T6_FxL
+-T6_mv_Fx_LR T6_FaL
+-T6_mv_Fx_LR T7_FaR
+-T6_mv_Fx_RL T6_FaR
+-T6_mv_Fx_RL T7_FaL
+T6_mv_Fx_LR -T6_FaL -T7_FaR -T6_FxL -T7_FxR
+T6_mv_Fx_RL -T6_FaR -T7_FaL -T6_FxR -T7_FxL
+-T6_mv_Fx_LR T6_FxL
+-T6_mv_Fx_LR T7_FxR
+-T6_mv_Fx_RL T6_FxR
+-T6_mv_Fx_RL T7_FxL
+-T0_mv_Ch_LR T0_FaL
+-T0_mv_Ch_LR T1_FaR
+-T0_mv_Ch_RL T0_FaR
+-T0_mv_Ch_RL T1_FaL
+T0_mv_Ch_LR -T0_FaL -T1_FaR -T0_ChL -T1_ChR
+T0_mv_Ch_RL -T0_FaR -T1_FaL -T0_ChR -T1_ChL
+-T0_mv_Ch_LR T0_ChL
+-T0_mv_Ch_LR T1_ChR
+-T0_mv_Ch_RL T0_ChR
+-T0_mv_Ch_RL T1_ChL
+-T1_mv_Ch_LR T1_FaL
+-T1_mv_Ch_LR T2_FaR
+-T1_mv_Ch_RL T1_FaR
+-T1_mv_Ch_RL T2_FaL
+T1_mv_Ch_LR -T1_FaL -T2_FaR -T1_ChL -T2_ChR
+T1_mv_Ch_RL -T1_FaR -T2_FaL -T1_ChR -T2_ChL
+-T1_mv_Ch_LR T1_ChL
+-T1_mv_Ch_LR T2_ChR
+-T1_mv_Ch_RL T1_ChR
+-T1_mv_Ch_RL T2_ChL
+-T2_mv_Ch_LR T2_FaL
+-T2_mv_Ch_LR T3_FaR
+-T2_mv_Ch_RL T2_FaR
+-T2_mv_Ch_RL T3_FaL
+T2_mv_Ch_LR -T2_FaL -T3_FaR -T2_ChL -T3_ChR
+T2_mv_Ch_RL -T2_FaR -T3_FaL -T2_ChR -T3_ChL
+-T2_mv_Ch_LR T2_ChL
+-T2_mv_Ch_LR T3_ChR
+-T2_mv_Ch_RL T2_ChR
+-T2_mv_Ch_RL T3_ChL
+-T3_mv_Ch_LR T3_FaL
+-T3_mv_Ch_LR T4_FaR
+-T3_mv_Ch_RL T3_FaR
+-T3_mv_Ch_RL T4_FaL
+T3_mv_Ch_LR -T3_FaL -T4_FaR -T3_ChL -T4_ChR
+T3_mv_Ch_RL -T3_FaR -T4_FaL -T3_ChR -T4_ChL
+-T3_mv_Ch_LR T3_ChL
+-T3_mv_Ch_LR T4_ChR
+-T3_mv_Ch_RL T3_ChR
+-T3_mv_Ch_RL T4_ChL
+-T4_mv_Ch_LR T4_FaL
+-T4_mv_Ch_LR T5_FaR
+-T4_mv_Ch_RL T4_FaR
+-T4_mv_Ch_RL T5_FaL
+T4_mv_Ch_LR -T4_FaL -T5_FaR -T4_ChL -T5_ChR
+T4_mv_Ch_RL -T4_FaR -T5_FaL -T4_ChR -T5_ChL
+-T4_mv_Ch_LR T4_ChL
+-T4_mv_Ch_LR T5_ChR
+-T4_mv_Ch_RL T4_ChR
+-T4_mv_Ch_RL T5_ChL
+-T5_mv_Ch_LR T5_FaL
+-T5_mv_Ch_LR T6_FaR
+-T5_mv_Ch_RL T5_FaR
+-T5_mv_Ch_RL T6_FaL
+T5_mv_Ch_LR -T5_FaL -T6_FaR -T5_ChL -T6_ChR
+T5_mv_Ch_RL -T5_FaR -T6_FaL -T5_ChR -T6_ChL
+-T5_mv_Ch_LR T5_ChL
+-T5_mv_Ch_LR T6_ChR
+-T5_mv_Ch_RL T5_ChR
+-T5_mv_Ch_RL T6_ChL
+-T6_mv_Ch_LR T6_FaL
+-T6_mv_Ch_LR T7_FaR
+-T6_mv_Ch_RL T6_FaR
+-T6_mv_Ch_RL T7_FaL
+T6_mv_Ch_LR -T6_FaL -T7_FaR -T6_ChL -T7_ChR
+T6_mv_Ch_RL -T6_FaR -T7_FaL -T6_ChR -T7_ChL
+-T6_mv_Ch_LR T6_ChL
+-T6_mv_Ch_LR T7_ChR
+-T6_mv_Ch_RL T6_ChR
+-T6_mv_Ch_RL T7_ChL
+-T0_mv_Gr_LR T0_FaL
+-T0_mv_Gr_LR T1_FaR
+-T0_mv_Gr_RL T0_FaR
+-T0_mv_Gr_RL T1_FaL
+T0_mv_Gr_LR -T0_FaL -T1_FaR -T0_GrL -T1_GrR
+T0_mv_Gr_RL -T0_FaR -T1_FaL -T0_GrR -T1_GrL
+-T0_mv_Gr_LR T0_GrL
+-T0_mv_Gr_LR T1_GrR
+-T0_mv_Gr_RL T0_GrR
+-T0_mv_Gr_RL T1_GrL
+-T1_mv_Gr_LR T1_FaL
+-T1_mv_Gr_LR T2_FaR
+-T1_mv_Gr_RL T1_FaR
+-T1_mv_Gr_RL T2_FaL
+T1_mv_Gr_LR -T1_FaL -T2_FaR -T1_GrL -T2_GrR
+T1_mv_Gr_RL -T1_FaR -T2_FaL -T1_GrR -T2_GrL
+-T1_mv_Gr_LR T1_GrL
+-T1_mv_Gr_LR T2_GrR
+-T1_mv_Gr_RL T1_GrR
+-T1_mv_Gr_RL T2_GrL
+-T2_mv_Gr_LR T2_FaL
+-T2_mv_Gr_LR T3_FaR
+-T2_mv_Gr_RL T2_FaR
+-T2_mv_Gr_RL T3_FaL
+T2_mv_Gr_LR -T2_FaL -T3_FaR -T2_GrL -T3_GrR
+T2_mv_Gr_RL -T2_FaR -T3_FaL -T2_GrR -T3_GrL
+-T2_mv_Gr_LR T2_GrL
+-T2_mv_Gr_LR T3_GrR
+-T2_mv_Gr_RL T2_GrR
+-T2_mv_Gr_RL T3_GrL
+-T3_mv_Gr_LR T3_FaL
+-T3_mv_Gr_LR T4_FaR
+-T3_mv_Gr_RL T3_FaR
+-T3_mv_Gr_RL T4_FaL
+T3_mv_Gr_LR -T3_FaL -T4_FaR -T3_GrL -T4_GrR
+T3_mv_Gr_RL -T3_FaR -T4_FaL -T3_GrR -T4_GrL
+-T3_mv_Gr_LR T3_GrL
+-T3_mv_Gr_LR T4_GrR
+-T3_mv_Gr_RL T3_GrR
+-T3_mv_Gr_RL T4_GrL
+-T4_mv_Gr_LR T4_FaL
+-T4_mv_Gr_LR T5_FaR
+-T4_mv_Gr_RL T4_FaR
+-T4_mv_Gr_RL T5_FaL
+T4_mv_Gr_LR -T4_FaL -T5_FaR -T4_GrL -T5_GrR
+T4_mv_Gr_RL -T4_FaR -T5_FaL -T4_GrR -T5_GrL
+-T4_mv_Gr_LR T4_GrL
+-T4_mv_Gr_LR T5_GrR
+-T4_mv_Gr_RL T4_GrR
+-T4_mv_Gr_RL T5_GrL
+-T5_mv_Gr_LR T5_FaL
+-T5_mv_Gr_LR T6_FaR
+-T5_mv_Gr_RL T5_FaR
+-T5_mv_Gr_RL T6_FaL
+T5_mv_Gr_LR -T5_FaL -T6_FaR -T5_GrL -T6_GrR
+T5_mv_Gr_RL -T5_FaR -T6_FaL -T5_GrR -T6_GrL
+-T5_mv_Gr_LR T5_GrL
+-T5_mv_Gr_LR T6_GrR
+-T5_mv_Gr_RL T5_GrR
+-T5_mv_Gr_RL T6_GrL
+-T6_mv_Gr_LR T6_FaL
+-T6_mv_Gr_LR T7_FaR
+-T6_mv_Gr_RL T6_FaR
+-T6_mv_Gr_RL T7_FaL
+T6_mv_Gr_LR -T6_FaL -T7_FaR -T6_GrL -T7_GrR
+T6_mv_Gr_RL -T6_FaR -T7_FaL -T6_GrR -T7_GrL
+-T6_mv_Gr_LR T6_GrL
+-T6_mv_Gr_LR T7_GrR
+-T6_mv_Gr_RL T6_GrR
+-T6_mv_Gr_RL T7_GrL
+
+#Early actions
+-T1_FxR T0_mv_Fx_LR
+-T2_FxR T0_mv_Fx_LR T1_mv_Fx_LR
+-T3_FxR T0_mv_Fx_LR T1_mv_Fx_LR T2_mv_Fx_LR
+-T4_FxR T0_mv_Fx_LR T1_mv_Fx_LR T2_mv_Fx_LR T3_mv_Fx_LR
+-T5_FxR T0_mv_Fx_LR T1_mv_Fx_LR T2_mv_Fx_LR T3_mv_Fx_LR T4_mv_Fx_LR
+-T6_FxR T0_mv_Fx_LR T1_mv_Fx_LR T2_mv_Fx_LR T3_mv_Fx_LR T4_mv_Fx_LR T5_mv_Fx_LR
+-T7_FxR T0_mv_Fx_LR T1_mv_Fx_LR T2_mv_Fx_LR T3_mv_Fx_LR T4_mv_Fx_LR T5_mv_Fx_LR T6_mv_Fx_LR
+-T1_ChR T0_mv_Ch_LR
+-T2_ChR T0_mv_Ch_LR T1_mv_Ch_LR
+-T3_ChR T0_mv_Ch_LR T1_mv_Ch_LR T2_mv_Ch_LR
+-T4_ChR T0_mv_Ch_LR T1_mv_Ch_LR T2_mv_Ch_LR T3_mv_Ch_LR
+-T5_ChR T0_mv_Ch_LR T1_mv_Ch_LR T2_mv_Ch_LR T3_mv_Ch_LR T4_mv_Ch_LR
+-T6_ChR T0_mv_Ch_LR T1_mv_Ch_LR T2_mv_Ch_LR T3_mv_Ch_LR T4_mv_Ch_LR T5_mv_Ch_LR
+-T7_ChR T0_mv_Ch_LR T1_mv_Ch_LR T2_mv_Ch_LR T3_mv_Ch_LR T4_mv_Ch_LR T5_mv_Ch_LR T6_mv_Ch_LR
+-T1_GrR T0_mv_Gr_LR
+-T2_GrR T0_mv_Gr_LR T1_mv_Gr_LR
+-T3_GrR T0_mv_Gr_LR T1_mv_Gr_LR T2_mv_Gr_LR
+-T4_GrR T0_mv_Gr_LR T1_mv_Gr_LR T2_mv_Gr_LR T3_mv_Gr_LR
+-T5_GrR T0_mv_Gr_LR T1_mv_Gr_LR T2_mv_Gr_LR T3_mv_Gr_LR T4_mv_Gr_LR
+-T6_GrR T0_mv_Gr_LR T1_mv_Gr_LR T2_mv_Gr_LR T3_mv_Gr_LR T4_mv_Gr_LR T5_mv_Gr_LR
+-T7_GrR T0_mv_Gr_LR T1_mv_Gr_LR T2_mv_Gr_LR T3_mv_Gr_LR T4_mv_Gr_LR T5_mv_Gr_LR T6_mv_Gr_LR
