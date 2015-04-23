@@ -96,17 +96,18 @@ good_vegetarian_meal(M) :- good_meal(M),vegetarian(M).
 %% X = 3.162288819352989
 
 %fails if X is a negative number
-sqrt(X,Y) :- X >= 0, CurrentEst is X, Tolerance is 1.0e-7, sqrt(X,CurrentEst,Tolerance,Y).
+%I couldn't redefine sqrt/2, so I used sqrt2 instead.
+sqrt2(X,Y) :- X >= 0, CurrentEst is X, Tolerance is 1.0e-7, sqrt2(X,CurrentEst,Tolerance,Y).
 
 %base case
-sqrt(Target,CurrentEst,Tolerance,FinalAnswer):- abs(CurrentEst*CurrentEst-Target,D),
+sqrt2(Target,CurrentEst,Tolerance,FinalAnswer):- abs(CurrentEst*CurrentEst-Target,D),
                                                 D=<Tolerance,
                                                 !,
                                                 FinalAnswer is CurrentEst.
 
 %recursive (iterative) step
-sqrt(Target,CurrentEst,Tolerance,FinalAnswer) :- X is CurrentEst - (CurrentEst*CurrentEst-Target)/(2*CurrentEst),
-                                                 sqrt(Target,X,Tolerance,FinalAnswer). 
+sqrt2(Target,CurrentEst,Tolerance,FinalAnswer) :- X is CurrentEst - (CurrentEst*CurrentEst-Target)/(2*CurrentEst),
+                                                 sqrt2(Target,X,Tolerance,FinalAnswer). 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
